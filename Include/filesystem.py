@@ -23,7 +23,6 @@ class FileSystem(QMainWindow):
         super(FileSystem, self).__init__()
         loadUi('UI\\Main.ui', self)
         
-        app.processEvents()
         self.setWindowIcon(QtGui.QIcon(getcwd() + '\\Img\\WHI3PER.ico'))
         self.PATH.insert('C:\\Users\\' + getuser() + '\\Desktop')
         
@@ -47,13 +46,11 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
     
     def lightMode(self):
-        app.processEvents()
         self.setStyleSheet('QWidget { font: 10pt "Comic Sans MS"; }')
     
     # ============================================================================================== #
     
     def darkMode(self):
-        app.processEvents()
         self.setStyleSheet('''
             QWidget {
                 font: 10pt "Comic Sans MS";
@@ -75,7 +72,6 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
 
     def grayMode(self):
-        app.processEvents()
         self.setStyleSheet('''
             QWidget { 
                 font: 10pt "Comic Sans MS"; 
@@ -93,7 +89,6 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
     
     def purpleMode(self):
-        app.processEvents()
         self.setStyleSheet('''
             QWidget {
                 font: 10pt "Comic Sans MS";
@@ -119,7 +114,6 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
     
     def blueMode(self):
-        app.processEvents()
         self.setStyleSheet('''
             QWidget {
                 font: 10pt "Comic Sans MS";
@@ -145,7 +139,6 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
 
     def aboutMe(self):
-        app.processEvents()
         loadUi('UI\\About Me.ui', self)
         self.LOGO_LABEL.setPixmap(QPixmap(getcwd() + '\\Img\\WHI3PER.png'))
         self.EMAIL.setPixmap(QPixmap(getcwd() + '\\Img\\Gmail.png'))
@@ -156,7 +149,6 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
     
     def clearVariables(self):
-        app.processEvents()
         self.allFile.clear()
         self.txt.clear()
         self.png.clear()
@@ -171,7 +163,6 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
         
     def saveFileNames(self):
-        app.processEvents()
         self.clearVariables()
         self.path = self.PATH.text()
         
@@ -181,7 +172,6 @@ class FileSystem(QMainWindow):
         listDirectory = listdir(self.path)
 
         for item in listDirectory:
-            app.processEvents()
             if item[-4:] == '.cpp' or item[-4:] == '.txt' or item[-3:] == '.py':
                 self.txt.append(item)
             elif item[-4:] == '.png' or item[-4:] == '.PNG':
@@ -208,14 +198,12 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
 
     def showDirectory(self):
-        app.processEvents()
         self.LOGS.clear()
         self.LOGS.append('Show Directory:\n')
         
         self.saveFileNames()
         
         for type in [self.txt, self.png, self.jpg, self.mp4, self.mkv, self.mp3]:
-            app.processEvents()
             if len(type) != 0:
                 for file in type:
                     self.LOGS.append('> ' + file)
@@ -224,7 +212,6 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
 
     def categories(self):
-        app.processEvents()
         self.LOGS.clear()
         self.LOGS.append('Categories:\n')
         
@@ -257,7 +244,6 @@ class FileSystem(QMainWindow):
         
     def rename(self):
         self.saveFileNames()
-        app.processEvents()
         self.LOGS.clear()
         self.LOGS.append('Rename:\n')
 
@@ -287,7 +273,6 @@ class FileSystem(QMainWindow):
         
     def delete(self):
         self.saveFileNames()
-        app.processEvents()
         self.LOGS.clear()
         self.LOGS.append('Delete:\n')
             
@@ -323,7 +308,6 @@ class FileSystem(QMainWindow):
     # ============================================================================================== #
 
     def exitProgram(self):
-        app.processEvents()
         exit()
 
     # =============================================================================================== #
