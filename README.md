@@ -5,4 +5,5 @@ README.md
 <p>> Rename: By selecting the file type and clicking on this option, you can number the corresponding files in order.</p>
 <p>> Categories: Creating folders based on the type of existing files, transferring and categorizing them.</p>
 <p>> Delete: By selecting the file type and clicking on this option, you can delete the relevant files.</p>
+<p>> Logs: Report your activities and display files.</p>
 <p><br></p>
